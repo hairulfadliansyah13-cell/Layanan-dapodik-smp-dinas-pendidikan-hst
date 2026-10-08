@@ -1,249 +1,50 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Konsultasi Dapodik SMP HST</title>
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <header class="hero">
-
-    <div class="hero-content">
-
-      <div class="badge">
-        LAYANAN DIGITAL
-      </div>
-
-      <h1>
-        Konsultasi Dapodik SMP
-      </h1>
-
-      <p>
-        Kabupaten Hulu Sungai Tengah
-      </p>
-
-      <div class="hero-info">
-        Sistem Daftar Hadir & Rekap Konsultasi Permasalahan Dapodik
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <main class="container">
-
-    <!-- STATISTIK -->
-
-    <section class="stats">
-
-      <div class="stat-card">
-        <span>Total Konsultasi</span>
-        <strong id="totalData">0</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Konsultasi Hari Ini</span>
-        <strong id="todayData">0</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Sekolah Terlayani</span>
-        <strong id="totalSchool">0</strong>
-      </div>
-
-    </section>
-
-
-    <!-- FORM -->
-
-    <section class="card">
-
-      <div class="card-title">
-
-        <div>
-          <h2>Daftar Hadir Konsultasi</h2>
-
-          <p>
-            Silakan isi data konsultasi dengan lengkap.
-          </p>
-        </div>
-
-      </div>
-
-
-      <form id="consultationForm">
-
-        <div class="form-grid">
-
-          <div class="form-group">
-
-            <label for="nama">
-              Nama
-            </label>
-
-            <input
-              type="text"
-              id="nama"
-              placeholder="Masukkan nama"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="sekolah">
-              Asal Sekolah
-            </label>
-
-            <input
-              type="text"
-              id="sekolah"
-              placeholder="Contoh: SMPN 1 Barabai"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="tanggal">
-              Tanggal Konsultasi
-            </label>
-
-            <input
-              type="date"
-              id="tanggal"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group full">
-
-            <label for="masalah">
-              Masalah yang Dikonsultasikan
-            </label>
-
-            <textarea
-              id="masalah"
-              rows="5"
-              placeholder="Tuliskan permasalahan Dapodik yang dikonsultasikan..."
-              required
-            ></textarea>
-
-          </div>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="btn-primary"
-          id="submitButton"
-        >
-          Simpan Data Konsultasi
-        </button>
-
-      </form>
-
-      <div id="message"></div>
-
-    </section>
-
-
-    <!-- HISTORY -->
-
-    <section class="card">
-
-      <div class="history-header">
-
-        <div>
-          <h2>History / Rekap Konsultasi</h2>
-
-          <p>
-            Data tersimpan otomatis di database.
-          </p>
-        </div>
-
-        <button
-          class="btn-refresh"
-          onclick="loadData()"
-        >
-          ↻ Refresh
-        </button>
-
-      </div>
-
-
-      <div class="search-box">
-
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Cari nama, sekolah, atau masalah..."
-          onkeyup="filterData()"
-        >
-
-      </div>
-
-
-      <div class="table-wrapper">
-
-        <table>
-
-          <thead>
-
-            <tr>
-              <th>No</th>
-              <th>ID</th>
-              <th>Nama</th>
-              <th>Asal Sekolah</th>
-              <th>Tanggal</th>
-              <th>Masalah Konsultasi</th>
-            </tr>
-
-          </thead>
-
-          <tbody id="tableBody">
-
-            <tr>
-              <td colspan="6" class="loading">
-                Memuat data...
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer>
-
-    <p>
-      © 2026 Layanan Konsultasi Dapodik SMP
-      Kabupaten Hulu Sungai Tengah
-    </p>
-
-  </footer>
-
-
-  <script src="script.js"></script>
-
-</body>
-</html>
+<div class="form-group">
+
+  <label for="sekolah">
+    Asal Sekolah
+  </label>
+
+  <select id="sekolah" required>
+
+    <option value="">
+      -- Pilih Asal Sekolah --
+    </option>
+
+    <option value="SMPN 19 HST">SMPN 19 HST</option>
+    <option value="SMPN 8 HST">SMPN 8 HST</option>
+    <option value="SMPN 33 HST">SMPN 33 HST</option>
+    <option value="SMPN 5 HST">SMPN 5 HST</option>
+    <option value="SMPN 15 HST">SMPN 15 HST</option>
+    <option value="SMPN 26 HST">SMPN 26 HST</option>
+    <option value="SMPN 31 HST">SMPN 31 HST</option>
+    <option value="SMPN 2 HST">SMPN 2 HST</option>
+    <option value="SMPN 22 HST">SMPN 22 HST</option>
+    <option value="SMPN 1 HST">SMPN 1 HST</option>
+    <option value="SMPN 12 HST">SMPN 12 HST</option>
+    <option value="SMPN 16 HST">SMPN 16 HST</option>
+    <option value="SMPN 3 HST">SMPN 3 HST</option>
+    <option value="SMPN 17 HST">SMPN 17 HST</option>
+    <option value="SMPN 27 HST">SMPN 27 HST</option>
+    <option value="SMPIT AL KHAIR">SMPIT AL KHAIR</option>
+    <option value="SMPN 18 HST">SMPN 18 HST</option>
+    <option value="SMPN 9 HST">SMPN 9 HST</option>
+    <option value="SMPN 29 HST">SMPN 29 HST</option>
+    <option value="SMPN 13 HST">SMPN 13 HST</option>
+    <option value="SMPN 20 HST">SMPN 20 HST</option>
+    <option value="SMPN 4 HST">SMPN 4 HST</option>
+    <option value="SMPN 32 SATAP HST">SMPN 32 SATAP HST</option>
+    <option value="SMP ISLAM MUHAJIRIN">SMP ISLAM MUHAJIRIN</option>
+    <option value="SMPN 21 HST">SMPN 21 HST</option>
+    <option value="SMPN 6 HST">SMPN 6 HST</option>
+    <option value="SMPN 28 HST">SMPN 28 HST</option>
+    <option value="SMPN 23 HST">SMPN 23 HST</option>
+    <option value="SMPN 11 HST">SMPN 11 HST</option>
+    <option value="SMPN 24 HST">SMPN 24 HST</option>
+    <option value="SMPN 25 SATAP HST">SMPN 25 SATAP HST</option>
+    <option value="SMPN 30 SATAP HST">SMPN 30 SATAP HST</option>
+    <option value="SMPN 34 SATAP HST">SMPN 34 SATAP HST</option>
+    <option value="SMPN 14 HST">SMPN 14 HST</option>
+
+  </select>
+
+</div>
