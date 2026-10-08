@@ -199,7 +199,32 @@ label {
 
 
 input,
+select,
 textarea {
+  width: 100%;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: .2s;
+  background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0284c7;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(2,132,199,.10);
+}
+
+select {
+  cursor: pointer;
+}
   width: 100%;
 
   border: 1px solid #dbe2ea;
